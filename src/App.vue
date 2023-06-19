@@ -1,19 +1,22 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="uuid-panel">
+    <h3 class="uuid">{{ v1 }}</h3>
+     <h3 class="uuid">{{ v2 }}</h3>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import { uuid } from 'vue-uuid';
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  data () {
+      return {
+        v1: uuid.v1()
+      };
+    }
 }
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
